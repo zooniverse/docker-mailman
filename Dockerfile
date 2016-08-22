@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
     rsyslog \
     supervisor \
     postfix-policyd-spf-python \
+    opendkim \
+    opendkim-tools \
     && rm -rf /var/lib/apt/lists/*
 
 COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
