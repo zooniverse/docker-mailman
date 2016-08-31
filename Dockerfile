@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
     opendkim-tools \
     && rm -rf /var/lib/apt/lists/*
 
+RUN adduser postfix opendkim
+
 COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
