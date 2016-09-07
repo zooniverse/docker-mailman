@@ -17,6 +17,9 @@ COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+COPY confirm.py /usr/lib/mailman/Mailman/Cgi/confirm.py
+COPY MailList.py /usr/lib/mailman/Mailman/MailList.py
+
 EXPOSE 25 80
 
 ENTRYPOINT [ "supervisord" ]
