@@ -14,9 +14,11 @@ RUN apt-get update && apt-get install -y \
 RUN adduser postfix opendkim
 
 COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
-
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY start.sh /usr/local/bin/start.sh
+
+RUN chmod +x /usr/local/bin/start.sh
 
 EXPOSE 25 80
 
-ENTRYPOINT [ "supervisord" ]
+ENTRYPOINT [ "/usr/local/bin/start.sh" ]
