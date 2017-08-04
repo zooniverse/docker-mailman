@@ -17,6 +17,7 @@ COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY start.sh /usr/local/bin/start.sh
 COPY rsyslog-hup.sh /etc/cron.daily/zzz-rsylog-hup
+COPY mailman-restart.sh /etc/cron.hourly/mailman-restart
 
 RUN chmod +x /usr/local/bin/start.sh
 
