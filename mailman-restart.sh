@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/lib/mailman/bin/mailmanctl restart
+/usr/lib/mailman/bin/mailmanctl -q restart
