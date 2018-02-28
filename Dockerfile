@@ -15,7 +15,7 @@ RUN adduser postfix opendkim
 
 COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY logroate.conf /etc/logrotate.d/mailman
+COPY logrotate.conf /etc/logrotate.d/mailman
 COPY start.sh /usr/local/bin/start.sh
 COPY rsyslog-hup.sh /etc/cron.daily/zzz-rsylog-hup
 COPY mailman-restart.sh /etc/cron.hourly/mailman-restart
