@@ -20,7 +20,9 @@ COPY start.sh /usr/local/bin/start.sh
 COPY rsyslog-hup.sh /etc/cron.daily/zzz-rsylog-hup
 COPY mailman-restart.sh /etc/cron.hourly/mailman-restart
 
-RUN chmod +x /usr/local/bin/start.sh
+RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
+RUN printf '#!/bin/sh\necho 1' > /sbin/runlevel
+RUN chmod +x /usr/local/bin/start.sh /sbin/runlevel
 
 EXPOSE 25 80
 
